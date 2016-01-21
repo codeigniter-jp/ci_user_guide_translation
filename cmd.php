@@ -18,6 +18,7 @@ mb_internal_encoding('UTF-8');
 if (! isset($argv[1])) {
     echo 'Usage:', PHP_EOL;
     echo '  php ', $argv[0] . ' check:line' . PHP_EOL;
+    echo '  php ', $argv[0] . ' add:link' . PHP_EOL;
     exit(1);
 }
 
@@ -30,6 +31,12 @@ switch ($cmd) {
     case 'check:line':
         $commandObject = new Kenjis\TranslationTools\Command\CheckLineCount();
         $commandObject->check($docs_en, $docs_ja);
+        break;
+    case 'add:link':
+        $commandObject = new Kenjis\TranslationTools\Command\AddGitHubLinks();
+        $ja_html = __DIR__ . '/user_guide_src_ja/build/html';
+        $html_ja = new Kenjis\TranslationTools\Document($ja_html, 'html');
+        $commandObject->add($html_ja);
         break;
     default:
         echo 'No such command: ', $cmd, PHP_EOL;

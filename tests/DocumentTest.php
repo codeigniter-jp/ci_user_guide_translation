@@ -12,8 +12,8 @@ class DocumentTest extends \PHPUnit_Framework_TestCase
     protected function setUp()
     {
         parent::setUp();
-        $docs_en = __DIR__ . '/Fixture/docs_en';
-        $this->obj = new Document($docs_en, 'rst');
+        $this->docs_en = __DIR__ . '/Fixture/docs_en';
+        $this->obj = new Document($this->docs_en, 'rst');
     }
 
     public function testNew()
@@ -34,5 +34,11 @@ class DocumentTest extends \PHPUnit_Framework_TestCase
             $this->assertEquals($expected[$i], $key);
             $i++;
         }
+    }
+
+    public function testGetFile()
+    {
+        $file = $this->obj->getFile('overview/mvc.rst');
+        $this->assertEquals($this->docs_en.'/overview/mvc.rst', $file->getPathname());
     }
 }

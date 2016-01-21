@@ -10,6 +10,8 @@ use SplFileObject;
 
 class File extends SplFileObject
 {
+    private $name;
+
     public function __construct(
         $filename,
         $open_mode = "r",
@@ -18,6 +20,16 @@ class File extends SplFileObject
     )
     {
         parent::__construct($filename, $open_mode, $use_include_path, $context);
+    }
+
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
+    public function getName()
+    {
+        return $this->name;
     }
 
     public function getLineCount()

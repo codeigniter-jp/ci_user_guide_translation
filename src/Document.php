@@ -22,6 +22,10 @@ class Document implements Iterator
         $this->readDir();
     }
 
+    /**
+     * @param string $name
+     * @return File
+     */
     public function getFile($name)
     {
         return $this->files[$name];
@@ -45,6 +49,7 @@ class Document implements Iterator
                 $len = strlen($this->dir);
                 $name = substr($file, $len + 1);
                 $this->files[$name] = new File($file);
+                $this->files[$name]->setName($name);
             }
         }
     }
