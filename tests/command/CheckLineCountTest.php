@@ -24,8 +24,8 @@ class CheckLineCountTest extends \PHPUnit_Framework_TestCase
 
     public function testCheck()
     {
-        $docs_en = new Document(__DIR__ . '/../Fixture/docs_en');
-        $docs_ja = new Document(__DIR__ . '/../Fixture/docs_ja');
+        $docs_en = new Document(__DIR__ . '/../Fixture/docs_en', 'rst');
+        $docs_ja = new Document(__DIR__ . '/../Fixture/docs_ja', 'rst');
         
          $this->expectOutputString('overview/mvc.rst : en 14 ja 16'.PHP_EOL);
         $this->obj->check($docs_en, $docs_ja);

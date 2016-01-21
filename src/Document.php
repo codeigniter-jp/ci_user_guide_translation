@@ -12,12 +12,13 @@ class Document implements Iterator
 {
     private $dir;
     private $files = [];
-    private $fileExtention = 'rst';
+    private $fileExtention;
 
-    public function __construct($dir)
+    public function __construct($dir, $ext)
     {
         $this->dir = $dir;
-        
+        $this->fileExtention = $ext;
+
         $this->readDir();
     }
 

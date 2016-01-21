@@ -13,7 +13,7 @@ class DocumentTest extends \PHPUnit_Framework_TestCase
     {
         parent::setUp();
         $docs_en = __DIR__ . '/Fixture/docs_en';
-        $this->obj = new Document($docs_en);
+        $this->obj = new Document($docs_en, 'rst');
     }
 
     public function testNew()

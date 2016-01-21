@@ -23,8 +23,8 @@ if (! isset($argv[1])) {
 
 $cmd = $argv[1];
 
-$docs_en = new \Kenjis\TranslationTools\Document($en_dir);
-$docs_ja = new \Kenjis\TranslationTools\Document($ja_dir);
+$docs_en = new \Kenjis\TranslationTools\Document($en_dir, 'rst');
+$docs_ja = new \Kenjis\TranslationTools\Document($ja_dir, 'rst');
 
 switch ($cmd) {
     case 'check:line':
