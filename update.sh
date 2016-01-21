@@ -4,6 +4,7 @@ cd CodeIgniter
 git fetch origin
 git checkout develop
 git merge origin/develop
+cd ..
 
 # Create git repo only containing user_guide_src/
 rm -rf user_guide_src_en
