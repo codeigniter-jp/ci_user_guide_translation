@@ -1,6 +1,8 @@
 Chapter 1 Title
 ===============
 
+This sample is from <http://docutils.sourceforge.net/docs/user/rst/quickstart.html>.
+
 Section 1.1 Title
 -----------------
 

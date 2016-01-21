@@ -19,6 +19,6 @@ class FileTest extends \PHPUnit_Framework_TestCase
     {
         $file = __DIR__ . '/Fixture/docs_en/index.rst';
         $obj = new File($file);
-        $this->assertEquals(14, $obj->getLineCount());
+        $this->assertEquals(16, $obj->getLineCount());
     }
 }
