@@ -8,4 +8,6 @@ if [ $# -eq 0 ]; then
 fi
 
 file="$1"
+
+file=${file%.*};
 meld "./user_guide_src_en/source/$file.rst" "./user_guide_src_ja/source/$file.rst" &
