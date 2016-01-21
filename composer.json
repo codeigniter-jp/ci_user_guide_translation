@@ -1,0 +1,24 @@
+{
+    "name": "kenjis/translation-tools",
+    "description":" ",
+    "keywords":[
+    ],
+    "license": "MIT",
+    "autoload":{
+        "psr-4":{
+            "Kenjis\\TranslationTools\\": "src/"
+        }
+    },
+    "autoload-dev":{
+        "psr-4":{
+            "Kenjis\\TranslationTools\\": ["tests/", "tests/Fake"]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "branch-alias": {
+            "dev-develop": "0.1.x-dev"
+        }
+    }
+}
