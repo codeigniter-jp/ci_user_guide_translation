@@ -27,7 +27,7 @@ class AddGitHubLinkTest extends \PHPUnit_Framework_TestCase
         $html = new File(__DIR__ . '/../Fixture/html/test.html');
         $html->setName('html/test.html');
         
-        $this->expectOutputString('Added: html/test.html'.PHP_EOL);
+        $this->expectOutputString('Added GitHub links: html/test.html'.PHP_EOL);
         $test = $this->obj->add($html);
         
         $expected = <<<'EOL'

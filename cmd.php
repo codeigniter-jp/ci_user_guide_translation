@@ -32,9 +32,9 @@ switch ($cmd) {
         $commandObject->check($docs_en, $docs_ja);
         break;
     case 'add:link':
-        $commandObject = new Kenjis\TranslationTools\Command\AddGitHubLinks();
         $ja_html = __DIR__ . '/user_guide_src_ja/build/html';
         $html_ja = new Kenjis\TranslationTools\Document($ja_html, 'html');
+        $commandObject = new Kenjis\TranslationTools\Command\AddGitHubLinks();
         $commandObject->add($html_ja);
         break;
     default:

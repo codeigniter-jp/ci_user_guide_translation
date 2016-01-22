@@ -51,7 +51,7 @@ class AddGitHubLink
 
                 if (! preg_match('/\[.+?\]/u', $prevLine, $matches)) {
                     $line = '<div style="float:right;margin-left:5px;">[ ' . $link_en . ' | ' . $link_ja . ' | ' . $link_ja_edit . ' ]</div>' . "\n" . $line;
-                    echo 'Added: ' . $html->getName() . PHP_EOL;
+                    echo 'Added GitHub links: ' . $html->getName() . PHP_EOL;
                 }
             }
 
