@@ -18,7 +18,7 @@ $ ./update.sh
 
 ## How to Generate Japanese HTML
 
-~~
+~~~
 $ cd ci_user_guide_translation/
 $ cd user_guide_src_ja/
 $ make clean
