@@ -18,3 +18,4 @@ git checkout -b develop --track origin/develop
 git remote add en ../user_guide_src_en/
 git remote add nekoget git@github.com:NEKOGET/ci_user_guide_src.git
 git fetch nekoget
+git checkout develop_japanese

@@ -16,3 +16,4 @@ cd ../user_guide_src_ja/
 git fetch en
 git checkout develop
 git merge en/develop
+git checkout develop_japanese
