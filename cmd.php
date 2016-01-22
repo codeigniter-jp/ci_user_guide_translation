@@ -5,7 +5,7 @@
  * @author     Kenji Suzuki <https://github.com/kenjis>
  * @license    MIT License
  * @copyright  2016 Kenji Suzuki
- * @link       https://github.com/kenjis/ci_user_guide_translation
+ * @link       https://github.com/codeigniter-jp/ci_user_guide_translation
  */
 
 $en_dir = __DIR__ . '/user_guide_src_en/source';
@@ -24,11 +24,10 @@ if (! isset($argv[1])) {
 
 $cmd = $argv[1];
 
-$docs_en = new \Kenjis\TranslationTools\Document($en_dir, 'rst');
-$docs_ja = new \Kenjis\TranslationTools\Document($ja_dir, 'rst');
-
 switch ($cmd) {
     case 'check:line':
+        $docs_en = new \Kenjis\TranslationTools\Document($en_dir, 'rst');
+        $docs_ja = new \Kenjis\TranslationTools\Document($ja_dir, 'rst');
         $commandObject = new Kenjis\TranslationTools\Command\CheckLineCount();
         $commandObject->check($docs_en, $docs_ja);
         break;

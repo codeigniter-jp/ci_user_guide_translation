@@ -35,6 +35,7 @@ class AddGitHubLink
 
         $filename = preg_replace('/\.html\z/', '.rst', $html->getName());
 
+        $prevLine = false;
         foreach ($html as $line) {
             if ($done === false && preg_match($this->targetLineRegExp, $line, $matches)) {
                 $done = true;
@@ -48,13 +49,14 @@ class AddGitHubLink
                 $link_ja_edit = '<a href="' . $this->translationUrl . '/blob/' . $this->translationBranch . $this->translationPath . $filename;
                 $link_ja_edit .= '">GitHubで修正</a>';
 
-                if (! preg_match('/\[.+?\]/u', $line, $matches)) {
+                if (! preg_match('/\[.+?\]/u', $prevLine, $matches)) {
                     $line = '<div style="float:right;margin-left:5px;">[ ' . $link_en . ' | ' . $link_ja . ' | ' . $link_ja_edit . ' ]</div>' . "\n" . $line;
                     echo 'Added: ' . $html->getName() . PHP_EOL;
                 }
             }
 
             $content .= $line;
+            $prevLine = $line;
         }
 
         return $content;
