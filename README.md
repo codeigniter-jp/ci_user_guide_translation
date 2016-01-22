@@ -1,5 +1,14 @@
 # Translation Tools for CodeIgniter User Guide
 
+## Folder Structure
+
+~~~
+ci_user_guide_translation/
+├── CodeIgniter/        ... The offical CodeIgniter repository
+├── user_guide_src_en/  ... The repository containing only the offical User Guide
+└── user_guide_src_ja/  ... The repository for Japanese User Guide
+~~~
+
 ## Installation
 
 ~~~
@@ -10,6 +19,8 @@ $ composer install
 ~~~
 
 ## How to Update `develop` branch
+
+The following commands updates `develop` branch in `user_guide_src_ja`.
 
 ~~~
 $ cd ci_user_guide_translation/
