@@ -9,6 +9,8 @@ cd user_guide_src_en/
 git filter-branch --prune-empty --subdirectory-filter user_guide_src develop
 
 cd ../
+git clone git@github.com:codeigniter-jp/ci-ja.git
+
 git clone git@github.com:codeigniter-jp/user_guide_src_ja.git
 
 cd user_guide_src_ja/
