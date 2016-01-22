@@ -20,11 +20,7 @@ $ ./update.sh
 
 ~~~
 $ cd ci_user_guide_translation/
-$ cd user_guide_src_ja/
-$ make clean
-$ make html
-$ cd ../
-$ php cmd.php add:link
+$ ./generate.sh
 ~~~
 
 Open `user_guide_src_ja/build/html/index.html`.
