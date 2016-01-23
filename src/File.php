@@ -32,8 +32,19 @@ class File extends SplFileObject
         return $this->name;
     }
 
+    /**
+     * @return int
+     */
     public function getLineCount()
     {
         return count(file($this->getPathname()));
+    }
+
+    /**
+     * @return array
+     */
+    public function getContaintArray()
+    {
+        return file($this->getPathname());
     }
 }

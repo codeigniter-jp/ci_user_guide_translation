@@ -11,7 +11,12 @@ use Iterator;
 class Document implements Iterator
 {
     private $dir;
+    
+    /**
+     * @var File[]
+     */
     private $files = [];
+    
     private $fileExtention;
 
     public function __construct($dir, $ext)

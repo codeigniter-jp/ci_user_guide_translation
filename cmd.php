@@ -18,6 +18,7 @@ mb_internal_encoding('UTF-8');
 if (! isset($argv[1])) {
     echo 'Usage:', PHP_EOL;
     echo '  php ', $argv[0] . ' check:line' . PHP_EOL;
+    echo '  php ', $argv[0] . ' check:progress' . PHP_EOL;
     echo '  php ', $argv[0] . ' add:link' . PHP_EOL;
     exit(1);
 }
@@ -29,6 +30,12 @@ switch ($cmd) {
         $docs_en = new \Kenjis\TranslationTools\Document($en_dir, 'rst');
         $docs_ja = new \Kenjis\TranslationTools\Document($ja_dir, 'rst');
         $commandObject = new Kenjis\TranslationTools\Command\CheckLineCount();
+        $commandObject->check($docs_en, $docs_ja);
+        break;
+    case 'check:progress':
+        $docs_en = new \Kenjis\TranslationTools\Document($en_dir, 'rst');
+        $docs_ja = new \Kenjis\TranslationTools\Document($ja_dir, 'rst');
+        $commandObject = new Kenjis\TranslationTools\Command\CheckProgess();
         $commandObject->check($docs_en, $docs_ja);
         break;
     case 'add:link':
