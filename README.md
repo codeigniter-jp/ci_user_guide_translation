@@ -24,7 +24,7 @@ The following commands updates `develop` branch in `user_guide_src_ja`.
 
 ~~~
 $ cd ci_user_guide_translation/
-$ ./update.sh
+$ ./update-develop.sh
 ~~~
 
 ## How to Generate Japanese HTML
