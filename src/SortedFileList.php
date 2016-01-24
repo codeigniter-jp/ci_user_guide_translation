@@ -21,7 +21,7 @@ class SortedFileList extends SplHeap
         $rdi = new RecursiveDirectoryIterator($dir, FilesystemIterator::SKIP_DOTS);
         $rii = new RecursiveIteratorIterator($rdi);
 
-         foreach ($rii as $item) {
+        foreach ($rii as $item) {
             $this->insert($item);
         }
     }

@@ -38,8 +38,8 @@ class TranslationRate
             }
 
             if ($lines_en[$lineNo] === $lines_ja[$lineNo]) {
-//                echo $lines_en[$lineNo];
-//                echo $lines_ja[$lineNo];
+                //echo $lines_en[$lineNo];
+                //echo $lines_ja[$lineNo];
                 $sameLine++;
             }
             $totalLine++;

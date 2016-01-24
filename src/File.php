@@ -17,8 +17,7 @@ class File extends SplFileObject
         $open_mode = "r",
         $use_include_path = false,
         $context = null
-    )
-    {
+    ) {
         parent::__construct($filename, $open_mode, $use_include_path, $context);
     }
 
