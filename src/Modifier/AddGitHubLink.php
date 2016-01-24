@@ -39,18 +39,24 @@ class AddGitHubLink
         foreach ($html as $line) {
             if ($done === false && preg_match($this->targetLineRegExp, $line, $matches)) {
                 $done = true;
-                
+
+                // https://github.com/codeigniter-jp/ci-ja/blob/develop/user_guide_ja_src/source/installation/index.rst
+                $link_old = '<a href="https://github.com/codeigniter-jp/ci-ja/blob/develop/user_guide_ja_src/source/' . $filename . '">旧版翻訳途中</a>';
+
                 $link_en = '<a href="' . $this->originUrl . '/commits/' . $this->originBranch . $this->originPath . $filename;
-                $link_en .= '">原文コミット履歴</a>';
+                $link_en .= '">原文履歴</a>';
 
                 $link_ja = '<a href="' . $this->translationUrl . '/commits/' . $this->translationBranch . $this->translationPath . $filename;
-                $link_ja .= '">翻訳コミット履歴</a>';
+                $link_ja .= '">翻訳履歴</a>';
 
                 $link_ja_edit = '<a href="' . $this->translationUrl . '/blob/' . $this->translationBranch . $this->translationPath . $filename;
                 $link_ja_edit .= '">GitHubで修正</a>';
 
                 if (! preg_match('/\[.+?\]/u', $prevLine, $matches)) {
-                    $line = '<div style="float:right;margin-left:5px;">[ ' . $link_en . ' | ' . $link_ja . ' | ' . $link_ja_edit . ' ]</div>' . "\n" . $line;
+                    $line = sprintf(
+                        '<div style="float:right;margin-left:5px;">[ %s | %s | %s | %s ]</div>' . "\n$line",
+                        $link_old, $link_en, $link_ja, $link_ja_edit
+                    );
                     echo 'Added GitHub links: ' . $html->getName() . PHP_EOL;
                 }
             }
