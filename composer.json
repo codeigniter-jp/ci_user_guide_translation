@@ -22,6 +22,6 @@
         }
     },
     "scripts": {
-        "test": "phpunit --debug -v"
+        "test": "phpunit --debug -v --colors=always"
     }
 }
