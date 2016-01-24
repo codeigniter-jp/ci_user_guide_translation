@@ -7,6 +7,7 @@ class TranslationRate
     /**
      * @param array $lines_en
      * @param array $lines_ja
+     * @return array
      */
     public function calc($lines_en, $lines_ja)
     {
@@ -45,7 +46,9 @@ class TranslationRate
             $totalLine++;
         }
 
-        return (1 - ($sameLine / $totalLine)) * 100;
+        $translatedLine = $totalLine - $sameLine;
+        $rate = ($translatedLine / $totalLine) * 100;
+        return [$rate, $translatedLine, $totalLine];
     }
 
     protected function isTitleMark($line_en, $line_ja)
