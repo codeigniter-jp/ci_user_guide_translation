@@ -46,8 +46,8 @@ EOL;
         $lines_en = $this->getLineArray($en);
         $lines_ja = $this->getLineArray($ja);
 
-        $test = $this->obj->calc($lines_en, $lines_ja);
-        $this->assertEquals(0, $test);
+        list($rate, $translatedLine, $totalLine) = $this->obj->calc($lines_en, $lines_ja);
+        $this->assertEquals(0, $rate);
     }
 
     public function testCalc_translation_completed()
@@ -65,8 +65,8 @@ EOL;
         $lines_en = $this->getLineArray($en);
         $lines_ja = $this->getLineArray($ja);
 
-        $test = $this->obj->calc($lines_en, $lines_ja);
-        $this->assertEquals(100, $test);
+        list($rate, $translatedLine, $totalLine) = $this->obj->calc($lines_en, $lines_ja);
+        $this->assertEquals(100, $rate);
     }
 
      public function testCalc_complex_case()
@@ -74,7 +74,7 @@ EOL;
         $lines_en = file(__DIR__ . '/../Fixture/translation_rate/news_section.en.rst');
         $lines_ja = file(__DIR__ . '/../Fixture/translation_rate/news_section.ja.rst');
 
-        $test = round($this->obj->calc($lines_en, $lines_ja), 3);
-        $this->assertEquals(23.077, $test, 0.0001);
+        list($rate, $translatedLine, $totalLine) = $this->obj->calc($lines_en, $lines_ja);
+        $this->assertEquals(23.077, round($rate, 3), 0.0001);
     }
 }
