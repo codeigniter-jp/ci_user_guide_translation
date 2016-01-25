@@ -62,6 +62,9 @@ class TranslationRate
         if (preg_match('/^=+$/', $line_en) && preg_match('/^=+$/', $line_ja)) {
             return true;
         }
+        if (preg_match('/^\*+$/', $line_en) && preg_match('/^\*+$/', $line_ja)) {
+            return true;
+        }
         
         return false;
     }
