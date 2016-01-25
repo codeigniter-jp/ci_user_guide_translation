@@ -52,10 +52,12 @@ class AddGitHubLink
                 $link_ja_edit = '<a href="' . $this->translationUrl . '/blob/' . $this->translationBranch . $this->translationPath . $filename;
                 $link_ja_edit .= '">GitHubで修正</a>';
 
+                $link_google_docs = '<br /><div style="float:right;margin-left:5px;">[ <b class="highlighted">翻訳者募集中</b> → <a href="https://docs.google.com/spreadsheets/d/1ZWD5XqwH-Uo9X7MR644jbL6O8p5LxIngLT8M547H8wc/edit?pref=2&pli=1#gid=0">翻訳状況</a> ]</div>';
+
                 if (! preg_match('/\[.+?\]/u', $prevLine, $matches)) {
                     $line = sprintf(
-                        '<div style="float:right;margin-left:5px;">[ %s | %s | %s | %s ]</div>' . "\n$line",
-                        $link_old, $link_en, $link_ja, $link_ja_edit
+                        '<div style="float:right;margin-left:5px;">[ %s | %s | %s | %s ]</div>%s' . "\n$line",
+                        $link_old, $link_en, $link_ja, $link_ja_edit, $link_google_docs
                     );
                     echo 'Added GitHub links: ' . $html->getName() . PHP_EOL;
                 }
