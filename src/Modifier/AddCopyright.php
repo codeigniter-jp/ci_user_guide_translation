@@ -13,7 +13,7 @@ class AddCopyright
     public function __construct()
     {
         $this->targetLineRegExp = '!&copy; Copyright 2014 - 20\d\d, British Columbia Institute of Technology\.!u';
-        $this->copyright = '<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>';
+        $this->copyright = '<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）';
     }
 
     public function add(File $html)
