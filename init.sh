@@ -13,6 +13,8 @@ git clone git@github.com:codeigniter-jp/ci-ja.git
 
 git clone git@github.com:codeigniter-jp/user_guide_src_ja.git
 
+git clone git@github.com:codeigniter-jp/codeigniter-jp.github.io.git
+
 cd user_guide_src_ja/
 git checkout -b develop --track origin/develop
 git remote add en ../user_guide_src_en/

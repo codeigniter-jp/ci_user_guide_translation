@@ -2,27 +2,17 @@
 
 ./generate.sh
 
-rm -rf html/
-mv user_guide_src_ja/build/html/ .
+cd codeigniter-jp.github.io
 
-cd user_guide_src_ja/
-
-#git checkout --orphan gh-pages
-#git rm -r --cached .
-#rm -rf * .gitignore
-#touch .nojekyll
-
-git checkout gh-pages
-rm -rf *
-mv ../html/ .
-mv html/* .
-mv html/.buildinfo .
-rmdir html/
+git checkout master
+rm -rf user_guide/3/*
+cp -r ../user_guide_src_ja/build/html/* user_guide/3/
 
 git add --all
-git commit -m "Update GitHub Pages"
+git commit -m "Update GitHub Pages user_guide/3"
 
 echo
 echo "To update GitHub Pages, type the following commands:"
-echo "  cd user_guide_src_ja/"
-echo "  git push origin gh-pages"
+echo "  cd codeigniter-jp.github.io/"
+echo "  git push origin master"
+
