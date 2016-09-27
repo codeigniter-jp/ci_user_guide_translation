@@ -5,6 +5,7 @@
 cd codeigniter-jp.github.io
 
 git checkout master
+git pull
 rm -rf user_guide/3/*
 cp -r ../user_guide_src_ja/build/html/* user_guide/3/
 
