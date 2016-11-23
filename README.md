@@ -4,9 +4,10 @@
 
 ~~~
 ci_user_guide_translation/
-├── CodeIgniter/        ... The offical CodeIgniter repository
-├── user_guide_src_en/  ... The repository containing only the offical User Guide
-└── user_guide_src_ja/  ... The repository for Japanese User Guide
+├── CodeIgniter/              ... The offical CodeIgniter repository
+├── codeigniter-jp.github.io/ ... The GitHub page repository for CodeIgniter Users Group in Japan
+├── user_guide_src_en/        ... The repository containing only the offical User Guide
+└── user_guide_src_ja/        ... The repository for Japanese User Guide
 ~~~
 
 ## Installation

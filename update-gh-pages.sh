@@ -16,4 +16,3 @@ echo
 echo "To update GitHub Pages, type the following commands:"
 echo "  cd codeigniter-jp.github.io/"
 echo "  git push origin master"
-
